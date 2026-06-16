@@ -262,60 +262,56 @@ h2::before {
 }
 
 /* ==========================================================================
-   6. PORTFOLIO GRID CARD (CLEAN & BORDERLESS STYLE)
+   6. PORTFOLIO GRID CARD (KEMBALI KE ORIGINAL RESPONSIVE BOX STYLE)
    ========================================================================== */
 .portfolio-section {
-    padding: 100px 0;
-    background-color: #ffffff; /* Latar belakang putih bersih tanpa kotak */
+    padding: 80px 0;
+    background-color: #f8f9fa; /* Latar belakang abu-abu sangat muda agar kartu putih terlihat kontras */
 }
 
-/* Judul Utama Section */
 .portfolio-section h2 {
-    display: block;
     text-align: center;
-    font-family: 'Lora', serif; /* Font serif yang elegan dan tidak kaku */
-    font-size: 36px;
-    font-weight: 500;
-    text-transform: lowercase; /* Menggunakan huruf kecil semua agar santai ala Emily */
-    font-style: italic;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
     color: #111111;
-    margin-bottom: 60px;
 }
 
-/* Memastikan tulisan h2 dibaca "alif's work" di HTML nanti, atau hilangkan garis bawahnya */
-.portfolio-section h2::after, 
-.portfolio-section h2::before {
-    display: none;
-}
-
-/* Grid Tiga Kolom */
+/* Grid yang otomatis menyesuaikan jumlah kolom di HP */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px; 
-    margin-top: 20px;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* Kartu Tanpa Pembatas (Borderless) */
+/* Kartu dengan kotak putih dan bayangan halus seperti versi pertama */
 .project-card {
-    background: transparent;
-    border: none;
-    text-align: center;
-    transition: transform 0.3s ease;
+    background: #ffffff;
+    border: 1px solid #eef0f2;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left; /* Teks rata kiri rapi seperti semula */
 }
 
 .project-card:hover {
-    transform: translateY(-4px); /* Efek melayang super tipis */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 /* Pembungkus Gambar */
 .card-img-wrapper {
+    position: relative;
     width: 100%;
-    height: 240px;
+    height: 220px;
     overflow: hidden;
-    margin-bottom: 20px;
-    background-color: #f8f9fa;
-    border-radius: 4px; /* Sudut gambar sedikit melengkung halus */
+    background-color: #f1f3f5;
 }
 
 .card-img-wrapper img {
@@ -324,44 +320,65 @@ h2::before {
     object-fit: cover;
     display: block;
 }
-/* Khusus untuk kartu kedua agar menampilkan 2 foto berdampingan */
+
+/* Khusus kartu kedua (double image berdampingan) */
 .card-img-wrapper.double-img {
-    display: flex; /* Memaksa kedua foto berjejer ke samping */
+    display: flex;
 }
 
 .card-img-wrapper.double-img img {
-    width: 50%; /* Masing-masing foto mengambil setengah ruang kartu */
+    width: 50%;
     height: 100%;
     object-fit: cover;
-    border-right: 2px solid #ffffff; /* Memberikan garis pembatas putih tipis di tengah */
+    border-right: 1px solid #ffffff;
 }
 
-/* Menghilangkan garis pembatas putih pada foto kedua (paling kanan) */
 .card-img-wrapper.double-img img:last-child {
     border-right: none;
 }
 
-/* Konten Teks di Bawah Gambar */
+/* Isi Teks di dalam Kartu */
 .card-content {
-    padding: 0 10px;
+    padding: 25px;
 }
 
-/* Judul Proyek yang Selaras */
 .card-content h3 {
     font-size: 16px;
     font-weight: 700;
-    text-transform: uppercase; /* Huruf besar kapital yang bersih */
+    text-transform: uppercase;
     color: #111111;
     margin-bottom: 12px;
-    letter-spacing: 2px; /* Jarak antar huruf diperlebar agar modis */
+    letter-spacing: 1px;
+    line-height: 1.4;
 }
 
-/* Deskripsi Pendek */
 .card-content p {
     font-size: 14px;
-    color: #555555;
+    color: #666666;
     line-height: 1.6;
-    font-weight: 400;
+    margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE PORTFOLIO UNTUK TABLET & HP
+   ========================================================================== */
+@media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* Di tablet jadi 2 kolom */
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* Di HP otomatis jadi 1 kolom memanjang kebawah yang rapi */
+        gap: 20px;
+        padding: 0 25px;
+    }
+    
+    .card-img-wrapper {
+        height: 200px; /* Sedikit dikecilkan di HP agar seimbang */
+    }
 }
 
 /* ==========================================================================
