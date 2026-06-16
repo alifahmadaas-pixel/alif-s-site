@@ -20,19 +20,19 @@ body {
    2. MENU NAVIGASI (NAVBAR)
    ========================================================================== */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 10%;
-    background-color: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px); /* Efek kaca transparan modern */
-    border-bottom: 1px solid #eef0f2;
-    z-index: 1000;
-}
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 8%;
+        background-color: rgba(0, 0, 0, 0.45); /* Menggunakan dasar gelap transparan */
+        backdrop-filter: blur(8px); /* Efek kaca blur premium agar teks putih menonjol */
+        z-index: 1000;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
 
 .site-title a {
     font-size: 16px;
