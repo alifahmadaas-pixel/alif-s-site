@@ -562,7 +562,13 @@ h2::before {
 .connect-text .connect-title::after {
     display: none !important;
 }
-
+.connect-text {
+    flex: 1;
+    max-width: 500px;
+    text-align: left;
+    list-style: none !important; /* Memaksa tanda titik list hilang */
+    list-style-type: none !important;
+}
 .connect-description {
     font-size: 15px;
     color: rgba(255, 255, 255, 0.75); /* Teks deskripsi putih agak transparan agar nyaman dibaca */
